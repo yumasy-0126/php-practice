@@ -66,3 +66,6 @@ echo hello($name);
 $name = "佐藤";
 
 functionの関数を使用した際に「鈴木さん」の前にreturnをすることによってreturnの後ろの「鈴木さん」が表示されなくなるため
+
+
+
