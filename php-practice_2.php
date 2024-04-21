@@ -70,4 +70,13 @@ $date = new DateTime('2024-4-06');
 $prev_date = $date->modify('-1 month')->format('Y-m-d');
 echo $prev_date;
 
+$time1 = new DateTime('1992-04-25');
+$time2 = new DateTime('2024-04-21');
+
+$diff = $time1->diff($time2);
+
+echo 'あの日から'.$diff->format('%a日').'経過しました';
+
+
+
 ?>
