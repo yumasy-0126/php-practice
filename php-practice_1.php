@@ -15,13 +15,13 @@ echo $num / 2;
 // Q3 日付操作
 $today = date("Y年m月d日 H時i分s秒");
 
-echo '現在時刻は、'.$today.'です。';
+echo '現在時刻は、' . $today . 'です。';
 
 // Q4 条件分岐-1 if文
 $device = 'w';
 
 if ($device === 'windows'|| $device === 'mac'){
-    echo'使用OSは、'.$device.'です。';
+    echo'使用OSは、' . $device . 'です。';
 }else {
   echo'どちらでもありません。';
       }
@@ -51,7 +51,7 @@ $prefecture = [
 
 foreach ($prefecture as $key =>$value)
 {
-      echo $value."\n";
+      echo $value . "\n";
 }
 
 // Q8 連想配列-2
@@ -67,9 +67,9 @@ $prefecture['沖縄'] = '那覇市';
 
 foreach ($prefecture as $key => $value){
   if($key==='北海道'||$key==='沖縄'){
-    echo  $key . 'の県庁所在地は関東じゃない'."\n";
+    echo $key . 'の県庁所在地は関東じゃない' . "\n";
   }else{
-      echo $key. 'の県庁所在地は'. $value. 'です。'."\n";
+      echo $key . 'の県庁所在地は' . $value . 'です。' . "\n";
   }
 }
 
@@ -93,7 +93,7 @@ function calcTaxInPrice($price,$tax)
 $taxInPrice = calcTaxInPrice(1000,1.1);
 $price =1000;
 
-echo $price .'円の商品の税込価格は'. $taxInPrice .'円です。';
+echo $price .'円の商品の税込価格は' . $taxInPrice . '円です。';
 
 
 
@@ -101,9 +101,9 @@ echo $price .'円の商品の税込価格は'. $taxInPrice .'円です。';
 function distinguishNum($calc)
 {
   if($calc % 2 === 0){
-    return $calc.'は偶数です。'."\n";
+    return $calc . 'は偶数です。' . "\n";
   }else{
-    return $calc . 'は奇数です。'."\n";
+    return $calc . 'は奇数です。' . "\n";
   }
 }
 
@@ -122,16 +122,16 @@ function evaluateGrade ($test)
   {
       case 'A';
       case 'B';
-          return '合格です'."\n";
+          return '合格です' . "\n";
           break;
       case 'C';
-       return '合格ですが追加課題があります。' ."\n";
+       return '合格ですが追加課題があります。' . "\n";
        break ;
       case 'D';
       return '不合格です。';
        break;
       default:
-          return '判定不明です。講師に問い合わせてください。'."\n";
+          return '判定不明です。講師に問い合わせてください。' . "\n";
           break;
   }
 }
