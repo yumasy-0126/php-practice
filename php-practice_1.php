@@ -3,7 +3,7 @@
 // Q1
 
 $name='畠山';
-echo '私の名前は「'.$name.'」です';
+echo '私の名前は「'. $name . '」です';
 
 // Q2 四則演算
 $num = 5 * 4;
@@ -22,9 +22,9 @@ $device = 'w';
 
 if ($device === 'windows'|| $device === 'mac'){
     echo'使用OSは、' . $device . 'です。';
-}else {
+} else {
   echo'どちらでもありません。';
-      }
+}
 
 // Q5 条件分岐-2 三項演算子
 $age = 5;
@@ -34,12 +34,12 @@ $message = ($age > 18) ? '成人です' : '未成年です';
 echo $message;
 
 // Q6 配列
-$prefecture = ['群馬','茨城','栃木','千葉','埼玉','東京','神奈川','前橋市','水戸市','宇都宮市','さいたま市','千葉市','横浜市','新宿区'];
+$kanto = ['群馬','茨城','栃木','千葉','埼玉','東京','神奈川','新宿区'];
 
-echo " $prefecture[2]と$prefecture[3]は関東地方の都道府県です。";
+echo " $kanto[2]と$kanto[3]は関東地方の都道府県です。";
 
 // Q7 連想配列-1
-$prefecture = [
+$prefectures = [
   '東京' =>'新宿区',
   '神奈川' =>'横浜市',
   '千葉' =>'千葉市',
@@ -49,17 +49,16 @@ $prefecture = [
   '茨城' =>'水戸市',
 ];
 
-foreach ($prefecture as $key =>$value)
+foreach ($prefectures as $key =>$value)
 {
       echo $value . "\n";
 }
 
 // Q8 連想配列-2
-foreach ($prefecture as $key =>$value)
-{
-  if($key ==='埼玉' ){
+foreach ($prefectures as $key =>$value){
+  if($key === '埼玉' ){
     echo '埼玉県の県庁所在地は、さいたま市です';
-      }
+  }
 }
 // Q9 連想配列-3
 $prefecture['北海道'] = '札幌市';
@@ -84,14 +83,19 @@ sayHi('清水さん');
 sayHi('国立さん');
 
 // Q11 関数-2
-function calcTaxInPrice($price,$tax)
+function calcTaxInPrice($price)
 {
-    $total = $price * $tax;
+    $total = $price * 1.1;
     return $total;
 }
 
-$taxInPrice = calcTaxInPrice(1000,1.1);
 $price =1000;
+$taxInPrice = calcTaxInPrice($price);
+
+echo $price .'円の商品の税込価格は' . $taxInPrice . '円です。';
+
+// $price =1000;
+// $taxInPrice = calcTaxInPrice(1000,1.1);
 
 echo $price .'円の商品の税込価格は' . $taxInPrice . '円です。';
 

@@ -2,16 +2,17 @@
 // Q1 tic-tac問題
 
 for ($calc = 1; $calc <= 100; $calc++) {
-  if ($calc % 4 === 0) {
-        echo 'tic' . "\n";
+  if ($calc % 5 === 0 && $calc % 4 === 0) {
+        echo 'tic-tac' . "\n";
     } elseif ($calc % 5 === 0) {
         echo 'tac' . "\n";
-    } elseif ( $calc % 5 === 0 && $calc % 4 === 0) {
-        echo 'tic-tac' . "\n";
+    } elseif ($calc % 4 === 0) {
+        echo 'tic' . "\n";
     } else {
         echo $calc . "\n";
   }
 }
+
 
 
 
@@ -39,8 +40,7 @@ $personalInfos = [
 echo ($personalInfos[1]['name']) . 'の電話番号は' . ($personalInfos[1]['tel']) . 'です。';
 
 //問題２
-foreach ($personalInfos as $index => $value)
-{
+foreach ($personalInfos as $index => &$value){
   $index ++;
 
   echo $index . '番目の' . $value['name'] . 'のメールアドレスは' . $value['mail'] . 'で、電話番号は' . $value['tel'] . 'です。' . "\n";
@@ -49,9 +49,8 @@ foreach ($personalInfos as $index => $value)
 //問題３
 $ageList = [25, 30, 18];
 
-foreach ($personalInfos as $key => &$val)
-{
-  $val ["age"] = $ageList [$key];
+foreach ($personalInfos as $key => &$val){
+  $val["age"]= $ageList[$key];
 }
 
 unset ($val);
@@ -79,7 +78,7 @@ class Student
 
 $Student = new Student('30','佐々木');
 
-echo '学籍番号'. $Student ->studentId . '番の生徒は'. $Student ->studentName. 'です。';
+echo '学籍番号'. $Student->studentId . '番の生徒は'. $Student->studentName. 'です。';
 
 // Q4 オブジェクト-2
 
@@ -100,9 +99,9 @@ class Student
     }
 }
 
-$Student = new Student('30','佐々木');
+$student = new Student('30','佐々木');
 
-$Student -> attend();
+$student -> attend();
 
 
 // Q5 定義済みクラス
