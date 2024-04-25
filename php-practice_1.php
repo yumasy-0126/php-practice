@@ -49,13 +49,14 @@ $prefectures = [
   '茨城' =>'水戸市',
 ];
 
-foreach ($prefectures as $key =>$value)
+foreach ($prefectures as $key =>$prefecture)
 {
-      echo $value . "\n";
+      echo $prefecture . "\n";
 }
 
 // Q8 連想配列-2
-foreach ($prefectures as $key =>$value){
+foreach ($prefectures as $key =>$prefecture)
+{
   if($key === '埼玉' ){
     echo '埼玉県の県庁所在地は、さいたま市です';
   }
@@ -68,7 +69,7 @@ foreach ($prefecture as $key => $value){
   if($key==='北海道'||$key==='沖縄'){
     echo $key . 'の県庁所在地は関東じゃない' . "\n";
   }else{
-      echo $key . 'の県庁所在地は' . $value . 'です。' . "\n";
+    echo $key . 'の県庁所在地は' . $value . 'です。' . "\n";
   }
 }
 
@@ -126,22 +127,18 @@ function evaluateGrade ($test)
   {
       case 'A';
       case 'B';
-          return '合格です' . "\n";
-          break;
+        return '合格です' . "\n";
       case 'C';
-       return '合格ですが追加課題があります。' . "\n";
-       break ;
+        return '合格ですが追加課題があります。' . "\n";
       case 'D';
-      return '不合格です。';
-       break;
+        return '不合格です。';
       default:
-          return '判定不明です。講師に問い合わせてください。' . "\n";
-          break;
+        return '判定不明です。講師に問い合わせてください。' . "\n";
   }
 }
-$test =evaluateGrade('keod');
+$test =evaluateGrade('kd');
 echo $test;
-$test =evaluateGrade('C');
+$test =evaluateGrade('A');
 echo $test;
 ?>
 

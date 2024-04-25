@@ -49,7 +49,7 @@ foreach ($personalInfos as $index => &$value){
 //問題３
 $ageList = [25, 30, 18];
 
-foreach ($personalInfos as $key => &$val){
+foreach ($personalInfos as $key => & $val){
   $val["age"]= $ageList[$key];
 }
 
@@ -76,7 +76,7 @@ class Student
     }
 }
 
-$Student = new Student('30','佐々木');
+$Student = new student('30','佐々木');
 
 echo '学籍番号'. $Student->studentId . '番の生徒は'. $Student->studentName. 'です。';
 
@@ -94,26 +94,26 @@ class Student
 
     public function attend()
     {
-        echo $this -> studentName . 'はphpの授業に参加しました。学籍番号:' . $this ->studentId;
+        echo $this->studentName . 'はphpの授業に参加しました。学籍番号:' . $this->studentId;
         
     }
 }
 
 $student = new Student('30','佐々木');
 
-$student -> attend();
+$student->attend();
 
 
 // Q5 定義済みクラス
 
 $date = new DateTime ('2024-4-06');
-$prev_date = $date -> modify ('-1 month') -> format('Y-m-d');
+$prev_date = $date->modify ('-1 month') ->format('Y-m-d');
 echo $prev_date;
 
 $time1 = new DateTime('1992-04-25');
 $time2 = new DateTime('2024-04-21');
 
-$diff = $time1 -> diff($time2);
+$diff = $time1->diff($time2);
 
 echo 'あの日から' . $diff->format('%a日') . '経過しました';
 
