@@ -40,7 +40,7 @@ $personalInfos = [
 echo ($personalInfos[1]['name']) . 'の電話番号は' . ($personalInfos[1]['tel']) . 'です。';
 
 //問題２
-foreach ($personalInfos as $index => &$value){
+foreach ($personalInfos as $index => &$value) {
   $index ++;
 
   echo $index . '番目の' . $value['name'] . 'のメールアドレスは' . $value['mail'] . 'で、電話番号は' . $value['tel'] . 'です。' . "\n";
@@ -48,13 +48,11 @@ foreach ($personalInfos as $index => &$value){
 
 //問題３
 $ageList = [25, 30, 18];
-
-foreach ($personalInfos as $key => & $val){
-  $val["age"]= $ageList[$key];
+foreach ($ageList as $key => $age){
+    $personalInfos[$key]['age'] = $age;
 }
 
-unset ($val);
-var_dump ($personalInfos);
+var_dump($personalInfos);
 
 
 // Q3 オブジェクト-1
@@ -76,9 +74,9 @@ class Student
     }
 }
 
-$Student = new student('30','佐々木');
+$student = new student('30','佐々木');
 
-echo '学籍番号'. $Student->studentId . '番の生徒は'. $Student->studentName. 'です。';
+echo '学籍番号'. $student->studentId . '番の生徒は' . $student->studentName . 'です。';
 
 // Q4 オブジェクト-2
 
@@ -106,8 +104,8 @@ $student->attend();
 
 // Q5 定義済みクラス
 
-$date = new DateTime ('2024-4-06');
-$prev_date = $date->modify ('-1 month') ->format('Y-m-d');
+$date = new DateTime('2024-4-06');
+$prev_date = $date->modify('-1 month')->format('Y-m-d');
 echo $prev_date;
 
 $time1 = new DateTime('1992-04-25');

@@ -20,7 +20,7 @@ echo '現在時刻は、' . $today . 'です。';
 // Q4 条件分岐-1 if文
 $device = 'w';
 
-if ($device === 'windows'|| $device === 'mac'){
+if ($device === 'windows'|| $device === 'mac') {
     echo'使用OSは、' . $device . 'です。';
 } else {
   echo'どちらでもありません。';
@@ -49,15 +49,13 @@ $prefectures = [
   '茨城' =>'水戸市',
 ];
 
-foreach ($prefectures as $key =>$prefecture)
-{
+foreach ($prefectures as $key => $prefecture){
       echo $prefecture . "\n";
 }
 
 // Q8 連想配列-2
-foreach ($prefectures as $key =>$prefecture)
-{
-  if($key === '埼玉' ){
+foreach ($prefectures as $key => $prefecture){
+  if ($key === '埼玉' ) {
     echo '埼玉県の県庁所在地は、さいたま市です';
   }
 }
@@ -65,11 +63,11 @@ foreach ($prefectures as $key =>$prefecture)
 $prefecture['北海道'] = '札幌市';
 $prefecture['沖縄'] = '那覇市';
 
-foreach ($prefecture as $key => $value){
-  if($key==='北海道'||$key==='沖縄'){
+foreach ($prefecture as $key => $prefecture) {
+  if ($key === '北海道'||$key === '沖縄') {
     echo $key . 'の県庁所在地は関東じゃない' . "\n";
-  }else{
-    echo $key . 'の県庁所在地は' . $value . 'です。' . "\n";
+  } else {
+    echo $key . 'の県庁所在地は' . $prefecture . 'です。' . "\n";
   }
 }
 
@@ -78,7 +76,7 @@ foreach ($prefecture as $key => $value){
 
 function sayHi($name)
 {
-  echo $name . 'こんにちは' ."\n";
+  echo $name . 'こんにちは' . "\n";
 }
 sayHi('清水さん');
 sayHi('国立さん');
@@ -90,10 +88,10 @@ function calcTaxInPrice($price)
     return $total;
 }
 
-$price =1000;
+$price = 1000;
 $taxInPrice = calcTaxInPrice($price);
 
-echo $price .'円の商品の税込価格は' . $taxInPrice . '円です。';
+echo $price . '円の商品の税込価格は' . $taxInPrice . '円です。';
 
 // $price =1000;
 // $taxInPrice = calcTaxInPrice(1000,1.1);
@@ -105,9 +103,9 @@ echo $price .'円の商品の税込価格は' . $taxInPrice . '円です。';
 // Q12 関数とif文
 function distinguishNum($calc)
 {
-  if($calc % 2 === 0){
+  if ($calc % 2 === 0) {
     return $calc . 'は偶数です。' . "\n";
-  }else{
+  } else {
     return $calc . 'は奇数です。' . "\n";
   }
 }
@@ -121,10 +119,9 @@ echo $calc;
 
 // Q13 関数とswitch文
 
-function evaluateGrade ($test)
+function evaluateGrade($test)
 {
-  switch ($test)
-  {
+  switch ($test) {
       case 'A';
       case 'B';
         return '合格です' . "\n";
@@ -136,9 +133,9 @@ function evaluateGrade ($test)
         return '判定不明です。講師に問い合わせてください。' . "\n";
   }
 }
-$test =evaluateGrade('kd');
+$test = evaluateGrade('kd');
 echo $test;
-$test =evaluateGrade('A');
+$test = evaluateGrade('A');
 echo $test;
 ?>
 
