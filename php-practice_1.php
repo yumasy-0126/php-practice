@@ -47,7 +47,7 @@ $prefectures = [
   '栃木' =>'宇都宮市',
   '群馬' =>'前橋市',
   '茨城' =>'水戸市',
-];
+]
 
 foreach ($prefectures as $key => $prefecture){
       echo $prefecture . "\n";
@@ -82,21 +82,17 @@ sayHi('清水さん');
 sayHi('国立さん');
 
 // Q11 関数-2
-function calcTaxInPrice($price)
+function calcTaxInPrice($taxOutPrice) //仮引数
 {
-    $total = $price * 1.1;
+    $total = $taxOutPrice * 1.1;
     return $total;
 }
 
 $price = 1000;
-$taxInPrice = calcTaxInPrice($price);
+$taxInPrice = calcTaxInPrice($price); //実引数
 
 echo $price . '円の商品の税込価格は' . $taxInPrice . '円です。';
 
-// $price =1000;
-// $taxInPrice = calcTaxInPrice(1000,1.1);
-
-echo $price .'円の商品の税込価格は' . $taxInPrice . '円です。';
 
 
 
