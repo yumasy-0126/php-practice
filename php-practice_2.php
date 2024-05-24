@@ -59,8 +59,8 @@ var_dump($personalInfos);
 
 class Student
 {
-    public $studentId;
-    public $studentName;
+    public $studentId; // 初期値は入っていない
+    public $studentName; // 初期値は入っていない
 
     public function __construct($id, $name)
     {

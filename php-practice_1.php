@@ -76,12 +76,17 @@ foreach ($prefecture as $key => $prefecture) {
 
 function sayHi($name)
 {
-  echo $name . 'こんにちは' . "\n";
+  return  $name . 'こんにちは' . "\n";
 }
-sayHi('清水さん');
-sayHi('国立さん');
+
+$name = sayHi('清水さん');
+echo $name;
+$name = sayHi('国立さん');
+echo $name;
 
 // Q11 関数-2
+
+
 function calcTaxInPrice($taxOutPrice) //仮引数
 {
     $total = $taxOutPrice * 1.1;
@@ -89,6 +94,7 @@ function calcTaxInPrice($taxOutPrice) //仮引数
 }
 
 $price = 1000;
+//関数を実行している場所のことを「呼び出し元」や「実行元（場所）」という
 $taxInPrice = calcTaxInPrice($price); //実引数
 
 echo $price . '円の商品の税込価格は' . $taxInPrice . '円です。';
