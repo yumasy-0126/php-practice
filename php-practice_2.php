@@ -93,7 +93,6 @@ class Student
     public function attend()
     {
         echo $this->studentName . 'はphpの授業に参加しました。学籍番号:' . $this->studentId;
-        
     }
 }
 
@@ -104,16 +103,21 @@ $student->attend();
 
 // Q5 定義済みクラス
 
+// Q5-1
 $date = new DateTime('2024-4-06');
-$prev_date = $date->modify('-1 month')->format('Y-m-d');
-echo $prev_date;
+echo $date->modify('-1 month')->format('Y-m-d');
+// echo $date->modify('-1 month')->format('Y-m-d')->❌;
+// メソッドの後ろにメソッドを繋げる書き方をメソッドチェーン
 
+// オブジェクト型->メソッド/プロパティ
+// 後ろに->を繋げてメソッドやプロパティを呼び出せる条件：返り値がオブジェクトであること
+
+
+// Q5-2
 $time1 = new DateTime('1992-04-25');
-$time2 = new DateTime('2024-04-21');
+$time2 = new DateTime(); // コンストラクタの第一引数なしの場合、現在時刻のオブジェクトが作られる
 
-$diff = $time1->diff($time2);
-
-echo 'あの日から' . $diff->format('%a日') . '経過しました';
+echo 'あの日から' . $time1->diff($time2)->format('%a日') . '経過しました';
 
 
 
