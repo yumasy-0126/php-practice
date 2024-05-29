@@ -81,24 +81,23 @@ $prev = new DateTime('2000-1-1');
 echo $prev->diff($now)->format('%a')
 ```
 
-echo $prev->diff($now)->format('%a')
+1. まず、上記のformatメソッドがどんなオブジェクトから呼ばれているかを調べるため、diffメソッドの返り値を調べます。
+1. diffメソッドは変数$prevから呼ばれており、$prevにはDateTimeクラスからインスタンス化したオブジェクトが入っているので、 phpマニュアルにて、Datetimeクラスについて検索します。
 
-$prevが指しているのは 前のコードの new DateTimeというオブジェクトを指している
+1. phpマニュアルでDateTimeクラスのページにて、メソッド定義の中にdiffが記述されているので、そこから返り値を確認します。
 
- phpマニュアルでDateTimeを調べるとメソッド定義の中にdiffが記述されているところがある
- diff(DateTimeInterface $targetObject, bool $absolute = false): DateInterval
+`diff(DateTimeInterface $targetObject, bool $absolute = false): DateInterval`
 
-diffはdateIntervalオブジェクトである
+1. 上記の返り値のデータ型の部分（`:`以下）が、dateIntervalクラスのページリンクになっていることから、diffメソッドの返り値がdateIntervalオブジェクトであることがわかります。
 
-diffページの中の「参考」の場所にformat('%a')と同じ記述の
-DateInterval::format()
-という場所があるこの場所を見ると返り値を調べることができる
+1. 返り値のリンクからdateIntervalクラスのページに遷移し、クラス概要のメソッドの中にformatメソッドをクリックします。
 
+1. dateIntervalクラスのformatメソッドのページに遷移します。
+    - 「説明」にて、返り値のデータ型がstring型であることが確認できます。
+    - 「戻り値」にて、返り値についての詳細な説明を確認すると、「フォーマットされた間隔を返します。」とあります。
+
+<!-- メモ：
 $prev()->diff( )->format()
-prev(datetimeオブジェクト)　
-Diff (dateIntervalオブジェクト）
-
-
-
-
-
+変数prev(datetimeオブジェクト)
+メソッドdiff (返り値：dateIntervalオブジェクト）
+ -->
